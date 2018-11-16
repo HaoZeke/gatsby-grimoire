@@ -3,10 +3,9 @@ import { graphql } from "gatsby"
 import { Link } from 'gatsby'
 import Layout from "../components/layout"
 
-class BlogIndex extends React.Component {
-  render() {
-    const mdPosts = this.props.data.allMarkdownRemark.edges
-    const orgPosts = this.props.data.allOrga.edges
+const BlogIndex = ({data}) => {
+    const mdPosts = data.allMarkdownRemark.edges
+    const orgPosts = data.allOrga.edges
     const org_posts = orgPosts.map ( ({ node }) => {
       const title = node.meta.title || node.fields.slug
       const date = node.meta.date || 'no date'
@@ -40,7 +39,6 @@ class BlogIndex extends React.Component {
       </Layout>
     )
   }
-}
 
 export default BlogIndex
 
