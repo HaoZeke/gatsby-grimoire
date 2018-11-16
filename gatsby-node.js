@@ -1,5 +1,6 @@
 const path = require(`path`)
 const slash = require(`slash`)
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -20,6 +21,15 @@ exports.createPages = ({ graphql, actions }) => {
               }
             }
           }
+        allMarkdownRemark {
+          edges {
+            node {
+              fields {
+                slug
+              }
+            }
+          }
+        }
         }
       `
     ).then(result => {
@@ -37,7 +47,17 @@ exports.createPages = ({ graphql, actions }) => {
           },
         })
       })
-
+      result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+        createPage({
+          path: node.fields.slug,
+          component: slash(blogPostTemplate),
+          context: {
+            // Data passed to context is available
+            // in page queries as GraphQL variables.
+            slug: node.fields.slug,
+          },
+        })
+      })
       resolve()
     })
   })
@@ -63,5 +83,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       value: fileNode.fields.slug,
     })
 
+  } else if (
+    node.internal.type === 'MarkdownRemark'
+  ) {
+    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    })
   }
 }
