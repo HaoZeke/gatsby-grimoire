@@ -2,10 +2,9 @@ import React from "react"
 import { graphql } from 'gatsby'
 import Layout from '../components/layout'
 
-class BlogPostTemplate extends React.Component {
-  render() {
-    const post = this.props.data.orga
-    const { title, date } = post.meta
+const BlogPostTemplate = ({data}) => {
+  const post = data.orga || data.markdownRemark
+  const { title, date } = post.meta || post.frontmatter
 
     return (
       <Layout>
@@ -17,7 +16,6 @@ class BlogPostTemplate extends React.Component {
       </Layout>
     )
   }
-}
 
 export default BlogPostTemplate
 
@@ -26,6 +24,12 @@ export const pageQuery = graphql`
     orga(fields: { slug: { eq: $slug }}) {
       html
       meta
+    }
+    markdownRemark(fields: { slug: { eq: $slug } }) {
+      html
+      frontmatter {
+        title
+      }
     }
   }
 `
