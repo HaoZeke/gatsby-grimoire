@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-orga",
-  "description": "Gatsby starter website with org-mode",
+  "name": "gatsby-grimoire",
+  "description": "A gatsby version of grimoire",
   "version": "1.0.0",
-  "author": "Xiaoxing Hu <dawnstar.hu@gmail.com>",
+  "author": "Rohit Goswami <rohit.goswami[at]yahoo.com>",
   "dependencies": {
     "gatsby": "^2.0.47",
     "gatsby-plugin-typography": "^2.2.1",
