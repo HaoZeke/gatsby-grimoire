@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/gatsby-orga",
+  pathPrefix: "/",
   siteMetadata: {
     title: 'Gatsby Orga Starter',
   },
