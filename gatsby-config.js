@@ -43,6 +43,8 @@ module.exports = {
         // noHighlight: true,
       },
     },
+    // Categorize (maybe kill this with the docs?)
+    // https://www.gatsbyjs.org/docs/adding-tags-and-categories-to-blog-posts/
 {
       resolve: "gatsby-plugin-categories",
       options: {
