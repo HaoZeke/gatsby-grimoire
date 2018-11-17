@@ -2,7 +2,7 @@
 #+DATE: 2018-11-17
 #+TITLE: TODOs and Bugs
 
-* About
+* Site Migration
 This page keeps track of things left to be done.
 ** TODO Fix Categories for Org Files
 This is actually a major problem which involves two problems.
