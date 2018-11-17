@@ -1,8 +1,11 @@
+const config = require("./config/SiteConfig");
+
 module.exports = {
   pathPrefix: "/",
   siteMetadata: {
-    title: "hzNull Notes",
-    desc: "A collection of Rohit Goswami's (HaoZeke) notes and thoughts"
+    title: config.siteTitle,
+    desc: config.siteDescription,
+    siteUrl: config.siteUrl,
   },
   plugins: [
     {
@@ -54,7 +57,7 @@ module.exports = {
         {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-109503488-9",
+        trackingId: config.googleAnalyticsID,
         // Puts tracking script in the head instead of the body
         head: false,
         // Setting this parameter is optional
@@ -64,7 +67,7 @@ module.exports = {
         // Avoids sending pageview hits from custom paths
         exclude: ["/preview/**", "/do-not-track/me/too/"],
         // Enables Google Optimize using your container Id
-        optimizeId: "GTM-WK72R74",
+        optimizeId: config.googleOptimizeID,
         // Any additional create only fields (optional)
         // sampleRate: 5,
         // siteSpeedSampleRate: 10,
