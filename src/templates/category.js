@@ -21,6 +21,18 @@ export default class TagTemplate extends React.Component {
 
 export const pageQuery = graphql`
   query CategoryPage($category: String) {
+  allOrga (
+    filter: { internal: {content: {regex: "/#+CATEGORY/" }}}
+  )
+  {
+    totalCount
+    edges {
+      node {
+        meta
+        html
+      }
+    }
+  }
     allMarkdownRemark(
       limit: 1000
       filter: { frontmatter: { category: { eq: $category } } }
