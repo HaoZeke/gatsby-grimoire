@@ -41,6 +41,12 @@ module.exports = {
         // if you don't want to have server side prism code highlight
         // noHighlight: true,
       },
+    },
+{
+      resolve: "gatsby-plugin-categories",
+      options: {
+        templatePath: `${__dirname}/src/templates/category.js`
+      }
     }
   ],
 };
