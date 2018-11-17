@@ -1,5 +1,6 @@
 #+TITLE: Orga with Gatsby
 #+DATE: 2018-01-01
+#+CATEGORY: Pandas
 
 * Emphasis (can be in _headline_ too)
 

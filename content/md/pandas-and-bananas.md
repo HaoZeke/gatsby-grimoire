@@ -1,6 +1,8 @@
 ---
 title: "Pandas and Bananas"
 date: "2017-08-21"
+category: "Pandas"
+tags: "e"
 ---
 
 Do Pandas eat bananas? Check out this short video that shows that yes! pandas do
