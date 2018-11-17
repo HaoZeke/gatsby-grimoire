@@ -50,6 +50,27 @@ module.exports = {
       options: {
         templatePath: `${__dirname}/src/templates/category.js`
       }
-    }
+    },
+        {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-109503488-9",
+        // Puts tracking script in the head instead of the body
+        head: false,
+        // Setting this parameter is optional
+        anonymize: false,
+        // Setting this parameter is also optional
+        respectDNT: false,
+        // Avoids sending pageview hits from custom paths
+        exclude: ["/preview/**", "/do-not-track/me/too/"],
+        // Enables Google Optimize using your container Id
+        optimizeId: "GTM-WK72R74",
+        // Any additional create only fields (optional)
+        // sampleRate: 5,
+        // siteSpeedSampleRate: 10,
+        alwaysSendReferrer: true,
+        // cookieDomain: "example.com",
+      },
+        }
   ],
 };
