@@ -2,7 +2,8 @@ module.exports = {
   pathPrefix: "/",
   siteMetadata: {
     title: "hzNull Notes",
-    desc: "A collection of Rohit Goswami's (HaoZeke) notes and thoughts"
+    desc: "A collection of Rohit Goswami's (HaoZeke) notes and thoughts",
+    siteUrl: "https://hznull.netlify.com",
   },
   plugins: [
     {
