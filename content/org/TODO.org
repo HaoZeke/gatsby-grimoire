@@ -1,3 +1,81 @@
 #+AUTHOR: Rohit
+#+DATE: 2018-11-17
+#+TITLE: TODOs and Bugs
 
-* TODO Fix Categories for Org Files
+* About
+This page keeps track of things left to be done.
+** TODO Fix Categories for Org Files
+This is actually a major problem which involves two problems.
+*** Gatsby
+Apparently, gatsby refuses to accept variables for the ~regex~.
+#+BEGIN_SRC graphql
+  allOrga (
+    filter: { internal: {content: { regex: "/CATEGORY:/" regex: "Pandas"}}}
+  )
+  {
+    totalCount
+    edges {
+      node {
+        meta
+        internal {
+          content
+          contentDigest
+          type
+          owner
+        }
+      }
+    }
+  }
+#+END_SRC
+The above fragment correctly identifies an ~org~ file with ~#+CATEGORY: Pandas~,
+however the equivalent with variables does not work.
+#+BEGIN_SRC graphql
+  query CategoryPage($category: String) {
+  allOrga (
+    filter: { internal: {content: {regex: "/#+CATEGORY/" regex: $category }}}
+  )
+  {
+    totalCount
+    edges {
+      node {
+        meta
+        html
+      }
+    }
+  }
+    allMarkdownRemark(
+      limit: 1000
+      filter: { frontmatter: { category: { eq: $category } } }
+    ) {
+      totalCount
+      edges {
+        node {
+          fields {
+            slug
+          }
+          excerpt
+          timeToRead
+          frontmatter {
+            title
+            tags
+            date
+          }
+        }
+      }
+    }
+  }
+#+END_SRC
+The above formulation works for the ~markdown~ files but breaks for the ~org~
+files since the ~$category~ expands to ~Pandas~ and ~regex~ expects ~/Pandas/~.
+
+
+*** OrgaJS
+Another issue is the nature of the fields exposed by ~orgajs~ in the first
+place. If the ~meta~ object were to be exported and defined similar to
+~remark~'s ~frontmatter~ then that could be used directly to filter the Gatsby
+nodes.
+
+I have described this issue in a bug report filed at the [[https://github.com/xiaoxinghu/orgajs/issues/13][orgajs repository]].
+
+However it must be noted that the ~meta~ object necessarily includes more
+complicated objects compared to any ~yaml frontmatter~.
