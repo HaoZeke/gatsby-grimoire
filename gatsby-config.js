@@ -54,6 +54,9 @@ module.exports = {
         templatePath: `${__dirname}/src/templates/category.js`
       }
     },
+    // SEO Stuff
+    `gatsby-plugin-sitemap`,
+    // Analytics
         {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
@@ -74,6 +77,6 @@ module.exports = {
         alwaysSendReferrer: true,
         // cookieDomain: "example.com",
       },
-        }
+        },
   ],
 };
