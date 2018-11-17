@@ -2,40 +2,44 @@ import React from "react"
 import { graphql } from "gatsby"
 import { Link } from 'gatsby'
 import Layout from "../components/layout"
+import moment from "moment"
+import { sortBy, reverse, map, path, pipe } from 'ramda'
+
+const NoteRow = ({ title, date, url }) => (
+       <div>
+          <h3 style={{ marginBottom: '0.2em' }}>
+            <Link to={url}>{title}</Link>
+          </h3>
+          <small>{moment(date).format("DD MMMM, YYYY")}</small>
+        </div>
+)
+
+
+var translate = (page) => {
+  const { title, date, tags } = page.node.meta || page.node.frontmatter
+  const path = page.node.fields.slug
+  return (
+    <NoteRow title={title} date={date} desc="desc" url={path} tags={tags}/>
+  )
+}
+
+// Not really needed.
+var process = pipe(
+  sortBy(path([ 'node', 'meta', 'date' ])),
+  reverse,
+map(translate))
 
 const BlogIndex = ({data}) => {
     const mdPosts = data.allMarkdownRemark.edges
     const orgPosts = data.allOrga.edges
-    const org_posts = orgPosts.map ( ({ node }) => {
-      const title = node.meta.title || node.fields.slug
-      const date = node.meta.date || 'no date'
-      return (
-        <div>
-          <h3 style={{ marginBottom: '0.2em' }}>
-            <Link to={node.fields.slug}>{title}</Link>
-          </h3>
-          <small>{date}</small>
-        </div>
-      )
-    })
-    const md_posts = mdPosts.map ( ({ node }) => {
-      const title = node.frontmatter.title || node.fields.slug
-      const date = node.frontmatter.date || 'no date'
-      return (
-        <div>
-          <h3 style={{ marginBottom: '0.2em' }}>
-            <Link to={node.fields.slug}>{title}</Link>
-          </h3>
-          <small>{date}</small>
-        </div>
-      )
-    })
     return (
       <Layout>
         <h1>Hi org-mode people</h1>
         <p>Welcome to your new org+markdown Gatsby site.</p>
-        {org_posts}
-        {md_posts}
+        <h2>Org Posts</h2>
+        {process(orgPosts)}
+      <h2>Markdown Posts</h2>
+        {process(mdPosts)}
       </Layout>
     )
   }
