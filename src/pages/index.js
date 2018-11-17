@@ -4,6 +4,7 @@ import { Link } from 'gatsby'
 import Layout from "../components/layout"
 import moment from "moment"
 import { sortBy, reverse, map, path, pipe } from 'ramda'
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 
 const NoteRow = ({ title, date, url }) => (
        <div>
@@ -36,8 +37,8 @@ const BlogIndex = ({data}) => {
       <Layout>
         <h1>About</h1>
         <p>A proof-of-concept gatsby static site with multiple content
-        types.</p> <p>This site is a companion site to <a
-        href="https://grimoire.science">my more academic grimoire</a>.</p>
+        types.</p> <p>This site is a companion site to <OutboundLink
+        href="https://grimoire.science">my more academic grimoire</OutboundLink>.</p>
         <h2>Org Posts</h2>
         {process(orgPosts)}
       <h2>Markdown Posts</h2>
