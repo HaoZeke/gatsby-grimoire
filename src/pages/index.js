@@ -1,10 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 import { Link } from 'gatsby'
-import Layout from "../components/layout"
+import { OutboundLink } from 'gatsby-plugin-google-analytics'
 import moment from "moment"
 import { sortBy, reverse, map, path, pipe } from 'ramda'
-import { OutboundLink } from 'gatsby-plugin-google-analytics'
+import Layout from "../components/layout"
 
 const NoteRow = ({ title, date, url }) => (
        <div>
