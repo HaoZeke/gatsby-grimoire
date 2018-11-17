@@ -19,7 +19,7 @@ const Header = () => (
             textDecoration: 'none',
           }}
         >
-          Gatsby + Orga
+          hzNull Notes
         </Link>
       </h1>
     </div>

@@ -34,8 +34,10 @@ const BlogIndex = ({data}) => {
     const orgPosts = data.allOrga.edges
     return (
       <Layout>
-        <h1>Hi org-mode people</h1>
-        <p>Welcome to your new org+markdown Gatsby site.</p>
+        <h1>About</h1>
+        <p>A proof-of-concept gatsby static site with multiple content
+        types.</p> <p>This site is a companion site to <a
+        href="https://grimoire.science">my more academic grimoire</a>.</p>
         <h2>Org Posts</h2>
         {process(orgPosts)}
       <h2>Markdown Posts</h2>

@@ -1,7 +1,8 @@
 module.exports = {
   pathPrefix: "/",
   siteMetadata: {
-    title: 'Gatsby Orga Starter',
+    title: "hzNull Notes",
+    desc: "A collection of Rohit Goswami's (HaoZeke) notes and thoughts"
   },
   plugins: [
     {
