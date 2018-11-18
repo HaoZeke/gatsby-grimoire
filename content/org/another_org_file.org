@@ -1,6 +1,0 @@
-#+TITLE: Another Org File
-#+DATE: 2013-02-08
-
-Here is another org file.
-
-[[file:syntax.org][go back]]
