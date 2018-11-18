@@ -4842,13 +4842,6 @@ gatsby-plugin-typography@^2.2.1:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
-gatsby-plugin-well-known@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-well-known/-/gatsby-plugin-well-known-1.0.0.tgz#97bd17b2ae2ded23e98a51941c26e88b6a17677f"
-  integrity sha512-eNbpNCyFqy/GZSHpt2C5hZ+1ruMOknZkKT1g4Oo8ygnjK1/qCqmOXmokF+s+privHip6KwKuXkGkbrkNqmP1/g==
-  dependencies:
-    babel-runtime "^6.26.0"
-
 gatsby-react-router-scroll@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/gatsby-react-router-scroll/-/gatsby-react-router-scroll-2.0.1.tgz#32f5883803abd918f2b770e6ce4f552da783a588"
