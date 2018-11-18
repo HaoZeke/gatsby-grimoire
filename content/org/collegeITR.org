@@ -1,8 +1,7 @@
-#+TITLE: Industrial Presentation
+#+TITLE: Industrial Training Presentation
 #+AUTHOR: Rohit Goswami
 #+DATE: 2017-11-20
 
-* Industrial Training Presentation
 ** About
 In my third year of Chemical Engineering at [[https:hbtu.ac.in][HBTI Kanpur]], it was mandatory to
 submit a report and a presentation on an industrial internship. I keep
