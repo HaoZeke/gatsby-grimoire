@@ -10,7 +10,7 @@ forgetting where they are so I will just keep a copy of the location here.
 ** TODO Report
 Will look it up and add it here.
 ** Presentation
-This was one of my first production runs for my [[github:HaoZeke/zenYoda_Starter][zenYoda starter]].
+This was one of the first production runs for my [[github:HaoZeke/zenYoda_Starter][zenYoda starter]].
 The website was unfortunately deployed with [[https:surge.sh][surge.sh]] which I can't seem to
 access anymore.
 
