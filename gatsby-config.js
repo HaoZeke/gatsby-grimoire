@@ -76,6 +76,11 @@ module.exports = {
         // cookieDomain: "example.com",
       },
         },
+  {
+    resolve: `gatsby-plugin-well-known`,
+    options: {
+      source: './well-known',
+    },
       // make sure to put last in the array
   {
     resolve: `gatsby-plugin-netlify`,
