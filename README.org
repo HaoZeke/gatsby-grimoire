@@ -1,5 +1,4 @@
-* gatsby orga starter project
+* hzNull Notes
+A sample site for incorporating markdown and org mode files harmoniously with gatsby.
 
-An example project for using [[https://github.com/xiaoxinghu/orgajs][orga]] with [[https://www.gatsbyjs.org][gatsby]].
-
-Take a look at the [[https://xiaoxinghu.github.io/gatsby-orga/][demo site]].
+Will also contain some of my written work.
