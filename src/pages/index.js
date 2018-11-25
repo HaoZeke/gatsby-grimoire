@@ -39,10 +39,10 @@ const BlogIndex = ({data}) => {
         <p>A proof-of-concept gatsby static site with multiple content
         types.</p> <p>This site is a companion site to <OutboundLink
         href="https://grimoire.science">my more academic grimoire</OutboundLink>.</p>
-        <h2>Org Posts</h2>
-        {process(orgPosts)}
       <h2>Markdown Posts</h2>
         {process(mdPosts)}
+        <h2>Org Posts</h2>
+        {process(orgPosts)}
       </Layout>
     )
   }
@@ -66,7 +66,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: ASC }) {
       totalCount
       edges {
         node {
