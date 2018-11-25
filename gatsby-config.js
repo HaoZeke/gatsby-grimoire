@@ -1,3 +1,4 @@
+const path = require('path');
 module.exports = {
   pathPrefix: "/",
   siteMetadata: {
@@ -76,7 +77,13 @@ module.exports = {
         // cookieDomain: "example.com",
       },
         },
-      // make sure to put last in the array
+    {
+      resolve: "gatsby-plugin-tags",
+      options: {
+        templatePath: `${__dirname}/src/templates/tags.js`
+      }
+    },
+// make sure to put last in the array
   {
     resolve: `gatsby-plugin-netlify`,
     options: {
