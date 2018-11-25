@@ -4835,6 +4835,13 @@ gatsby-plugin-sitemap@^2.0.2:
     "@babel/runtime" "^7.0.0"
     sitemap "^1.12.0"
 
+gatsby-plugin-tags@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-tags/-/gatsby-plugin-tags-1.2.0.tgz#f5c06304ac74a8530fff7c3dbe8c8b0b9ee09a94"
+  integrity sha512-OKkVIcDQl017pPbz08YXqoqTtqKh4XWJEW0INqnyTnijK1gObELM9/UpJCYZ4NskO3iSmK7DwJ1x9snl3hWhYQ==
+  dependencies:
+    lodash "^4.17.10"
+
 gatsby-plugin-typography@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-typography/-/gatsby-plugin-typography-2.2.1.tgz#864c0afb6ae10d9597936141cdd4e27d8fcc1860"
