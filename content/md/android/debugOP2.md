@@ -6,6 +6,8 @@ tags: ["android", "legacy", "frustration"]
 published: true
 ---
 
+This post is also [on Medium](https://medium.com/@HaoZeke/restoring-an-old-oneplus-2-4bc94ffa5bdb).
+
 # Booting a ROM
 
 Apparently, OnePlus was supposed to have really great support for custom roms.
